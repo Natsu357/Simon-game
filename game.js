@@ -14,6 +14,13 @@ $(document).keypress(function() {
     started = true;
   }
 });
+function play(){
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+}
 
 $(".btn").click(function() {
 
@@ -40,9 +47,10 @@ function checkAnswer(currentLevel) {
     } else {
 
       playSound("wrong");
-
+      $(".play").css("display","inline")
+      $(".play").text("Restart")
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").text("Game Over");
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
@@ -58,7 +66,7 @@ function startOver(){
   started=false;
 }
 function nextSequence() {
-
+  $(".play").css("display","none")
   userClickedPattern = [];
   level++;
   $("#level-title").text("Level " + level);
