@@ -6,7 +6,7 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:5% 5% 1.5% 5%;
+  margin:0% 5% 1.5% 5%;
   color: #FEF2BF;
 }
 
@@ -15,16 +15,18 @@ body {
   grid-template-columns: 10rem 10rem;
   grid-template-rows: 10rem 10rem;
   gap: 2rem;
-  /* width: 50%;
-  margin: auto; */
+  position: relative;
+  right: 2rem;
 
 }
 .row{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25rem;
-  padding-right: 4rem;
+  height: 100vh;
+  
+ 
 }
 .btn {
   margin: 25px;
